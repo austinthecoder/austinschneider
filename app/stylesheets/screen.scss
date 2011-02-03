@@ -1,17 +1,20 @@
+@import "reset";
+@import "base";
 @import "compass/css3";
-@import "blueprint/reset";
-@import "partials/base"; // To configure blueprint, edit the partials/base.sass file.
-@import "blueprint";
-@import "blueprint/scaffolding"; // Import the non-default scaffolding module.
+@import "compass/layout/sticky-footer";
 
-// To generate css equivalent to the blueprint css but with your
-// configuration applied, uncomment:
-// @include blueprint
+$bg_color: #011C26;
+$font_color: #fff;
+$font_size: 26px;
+$link_color: #F4CB89;
+$images_path: "/images";
+$button_base_color: #ddd;
+$footer_top_and_bottom_padding: 10px;
 
-// But Compass recommends that you scope your blueprint styles
-// So that you can better control what pages use blueprint
-// when stylesheets are concatenated together.
-@include blueprint-scaffolding("body");
+@mixin col($width: 50%) {
+  float: left;
+  width: $width;
+}
 
 //////////////////////////////////////////////////
 
@@ -30,100 +33,57 @@
 }
 
 body {
-  @include blueprint-typography(true);
-  @include blueprint-utilities;
-  @include blueprint-debug;
-  @include blueprint-interaction;
-  // Remove the scaffolding when you're ready to start doing visual design.
-  // Or leave it in if you're happy with how blueprint looks out-of-the-box
-
+  background: $bg_color url($images_path + '/bg.png') no-repeat right top;
+  color: $font_color;
   font-family: 'Vollkorn', "Lucida Grande", serif;
-  font-size: 16px;
+  font-size: $font_size;
 
   a {
+    color: $link_color;
     text-decoration: none;
   }
 
-  ul {
-    padding-left: 40px;
-  }
-
   h1, h2, h3, h4, h5 {
-    font-family: 'Yanone Kaffeesatz', "Lucida Grande", serif;
+    font-family: 'Vollkorn', "Lucida Grande", serif;
+    letter-spacing: -1px;
   }
-}
-
-form {
-  @include blueprint-form;
 }
 
 //////////////////////////////////////////////////
 
-// Page layout can be done using mixins applied to your semantic classes and IDs:
-#container {
-  @include container;
-}
-
 #header {
-  @include container;
-  @include column($blueprint-grid-columns, true);
-
-  border-bottom: 1px solid #ddd;
-  padding: 20px 0;
+  padding: 30px 30px 20px 30px;
 
   #logo {
-    $columns: floor($blueprint-grid-columns / 2);
-    @include column($columns);
-
+    h1, h1 * { line-height: 1em; }
     h1 { margin: 0; }
-    #tag_line { color: #999; }
-  }
-
-  #status {
-    $columns: floor($blueprint-grid-columns / 2);
-    @include column($columns, true);
+    #tag_line { color: darken($font_color, 40%); }
   }
 }
 
-#footer {
-  @include column($blueprint-grid-columns, true);
+#menu {
+  background: darken($bg_color, 5%);
+  padding: 10px 30px 10px 30px;
 
-  border-top: 1px solid #ddd;
-  color: #999;
-  margin-top: 40px;
-  padding: 20px 0;
-}
-
-#sidebar {
-  // One third of the grid columns, rounding down. With 24 cols, this is 8.
-  $sidebar-columns: floor($blueprint-grid-columns / 3);
-  @include column($sidebar-columns, true);
-
-  background: #eee;
-
-  .inner {
-    padding: 20px;
+  ul {
+    margin: 0;
   }
-
-  .menu {
+  li {
     list-style: none;
-    padding-left: 0;
+    float: left;
+    margin: 0 30px 0 0;
   }
 }
 
 #content {
-  // Two thirds of the grid columns, rounding up.
-  // With 24 cols, this is 16.
-  $content-columns: ceil(2 * $blueprint-grid-columns / 3);
-  // true means it's the last column in the row
-  @include column($content-columns);
-
-  .inner {
-    padding: 20px 0;
-  }
+  padding: 20px 30px;
 }
 
-//////////////////////////////////////////////////
+#footer {
+  background: darken($bg_color, 5%);
+  color: darken($font_color, 30%);
 
-.project {
+  .inner { padding: $footer_top_and_bottom_padding 30px; }
 }
+
+@include sticky-footer(($font_size * 1.5 + ($footer_top_and_bottom_padding * 2)), "#container");
