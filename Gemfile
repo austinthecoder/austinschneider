@@ -1,6 +1,7 @@
 source "http://rubygems.org"
 
 gem "rails", "~> 3"
+gem "hashie", "~> 1"
 gem "pg", "~> 0"
 gem "haml", "~> 3"
 gem "compass", "~> 0"
