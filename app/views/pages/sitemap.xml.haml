@@ -1,8 +1,7 @@
-!!! XML
 %urlset{:xmlns => "http://www.sitemaps.org/schemas/sitemap/0.9"}
   - @pages.each do |p|
     %url
       %loc= "http://austinschneider.com#{p.path}"
-      %lasmod= p.modified_at.strftime("%Y-%m-%d")
+      %lastmod= p.modified_at.strftime("%Y-%m-%d")
       %changefreq= p.modification_frequency
       %priority= p.priority

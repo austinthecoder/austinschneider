@@ -4,4 +4,8 @@ class PagesController < ApplicationController
     render :projects
   end
 
+  def sitemap
+    # render :layout => false
+  end
+
 end
