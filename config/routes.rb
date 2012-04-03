@@ -1,7 +1,5 @@
-Austinschneider::Application.routes.draw do
+AustinSchneider::Application.routes.draw do
 
-  Page.all.each do |p|
-    match p.path, :to => "pages##{p.action}", :as => p.name
-  end
+  root :to => 'pages#home'
 
 end

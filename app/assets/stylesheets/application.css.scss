@@ -33,7 +33,7 @@ $footer_top_and_bottom_padding: 10px;
 }
 
 body {
-  background: $bg_color url($images_path + '/bg.png') no-repeat right top;
+  background: $bg_color image-url('bg.png') no-repeat right top;
   color: $font_color;
   font-family: 'Vollkorn', "Lucida Grande", serif;
   font-size: $font_size;

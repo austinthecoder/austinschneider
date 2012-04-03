@@ -1,11 +1,5 @@
 class PagesController < ApplicationController
 
-  def index
-    render :projects
-  end
-
-  def sitemap
-    # render :layout => false
-  end
+  caches_page :home
 
 end

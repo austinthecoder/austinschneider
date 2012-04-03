@@ -1,13 +1,15 @@
 class ApplicationController < ActionController::Base
 
-  include NoSubdomains
+  before_filter :ensure_no_subdomains
 
   protect_from_forgery
 
-  before_filter :set_pages
+private
 
-  def set_pages
-    @pages = Page.all
+  def ensure_no_subdomains
+    if request.subdomains.present?
+      redirect_to root_url(:host => request.domain, :port => request.port)
+    end
   end
 
 end
