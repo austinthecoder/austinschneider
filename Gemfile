@@ -10,3 +10,7 @@ group :assets do
   gem "coffee-rails", "~> 3.2.2"
   gem "uglifier", "~> 1.2.4"
 end
+
+group :development do
+  gem "heroku", "~> 2.23.0"
+end
