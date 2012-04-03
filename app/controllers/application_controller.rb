@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 private
 
   def ensure_no_subdomains
-    if request.subdomains.present?
+    if request.subdomains.present? && request.domain == 'austinschneider.com'
       redirect_to root_url(:host => request.domain, :port => request.port)
     end
   end
