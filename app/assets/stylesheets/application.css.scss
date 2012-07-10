@@ -5,7 +5,7 @@
 
 $bg_color: #011C26;
 $font_color: #fff;
-$font_size: 26px;
+$font_size: 16px;
 $link_color: #F4CB89;
 $images_path: "/images";
 $button_base_color: #ddd;
@@ -33,7 +33,7 @@ $footer_top_and_bottom_padding: 10px;
 }
 
 body {
-  background: $bg_color image-url('bg.png') no-repeat right top;
+  background: $bg_color;
   color: $font_color;
   font-family: 'Vollkorn', "Lucida Grande", serif;
   font-size: $font_size;
