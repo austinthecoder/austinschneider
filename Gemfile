@@ -6,6 +6,7 @@ gem 'rails', '~> 3.2.6'
 gem 'pg', '~> 0.14.0'
 gem 'haml-rails', '~> 0.3.4'
 gem "octokit", "~> 1.8.1"
+gem "crashlog", "~> 1.0.3"
 
 group :assets do
   gem 'sass-rails', '~> 3.2.5'
