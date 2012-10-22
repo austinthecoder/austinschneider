@@ -1,5 +1,6 @@
-.bundle
-.rvmrc
+/.bundle
+/.rvmrc
+/.powrc
 config/database.yml
 log/*.log
 tmp/

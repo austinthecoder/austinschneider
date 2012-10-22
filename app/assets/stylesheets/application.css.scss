@@ -1,22 +1,22 @@
-@import "reset";
-@import "base";
+//= require 'reset'
+//= require_self
+
 @import "compass/css3";
 @import "compass/layout/sticky-footer";
 
-$bg_color: #011C26;
+$bg_color: #303030;
 $font_color: #fff;
 $font_size: 16px;
-$link_color: #F4CB89;
-$images_path: "/images";
-$button_base_color: #ddd;
 $footer_top_and_bottom_padding: 10px;
 
-@mixin col($width: 50%) {
-  float: left;
-  width: $width;
-}
-
 //////////////////////////////////////////////////
+
+@font-face {
+  font-family: 'Squada One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Squada One'), local('SquadaOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/squadaone/v2/DIbfqh10Zkwc_Qd08Y0sab3hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
+}
 
 @font-face {
   font-family: 'Vollkorn';
@@ -25,27 +25,39 @@ $footer_top_and_bottom_padding: 10px;
   src: local('Vollkorn Regular'), local('Vollkorn-Regular'), url('http://themes.googleusercontent.com/font?kit=7jR1T900H5YEkd1UcZhA_fesZW2xOQ-xsNqO47m55DA') format('truetype');
 }
 
-@font-face {
-  font-family: 'Yanone Kaffeesatz';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Yanone Kaffeesatz Regular'), local('YanoneKaffeesatz-Regular'), url('http://themes.googleusercontent.com/font?kit=YDAoLskQQ5MOAgvHUQCcLbvy90DtE_Pg_qiF9bHvTzw') format('truetype');
-}
-
 body {
   background: $bg_color;
   color: $font_color;
   font-family: 'Vollkorn', "Lucida Grande", serif;
   font-size: $font_size;
+  line-height: 1.6em;
+}
 
-  a {
-    color: $link_color;
-    text-decoration: none;
-  }
+a {
+  color: #c0c0ff;
+  text-decoration: none;
+}
 
-  h1, h2, h3, h4, h5 {
-    font-family: 'Vollkorn', "Lucida Grande", serif;
-    letter-spacing: -1px;
+h1 {
+  font-family: 'Squada One', "Lucida Grande", serif;
+  font-size: 2.5em;
+  font-weight: normal;
+  line-height: 1em;
+}
+
+h2 {
+  font-family: 'Squada One', "Lucida Grande", serif;
+  font-size: 2em;
+  font-weight: normal;
+  line-height: 1em;
+  margin: 0 0 5px 0;
+}
+
+ul {
+  margin: 0 0 1.5em 20px;
+
+  li {
+    list-style-type: disc;
   }
 }
 
@@ -55,23 +67,7 @@ body {
   padding: 30px 30px 20px 30px;
 
   #logo {
-    h1, h1 * { line-height: 1em; }
-    h1 { margin: 0; }
     #tag_line { color: darken($font_color, 40%); }
-  }
-}
-
-#menu {
-  background: darken($bg_color, 5%);
-  padding: 10px 30px 10px 30px;
-
-  ul {
-    margin: 0;
-  }
-  li {
-    list-style: none;
-    float: left;
-    margin: 0 30px 0 0;
   }
 }
 

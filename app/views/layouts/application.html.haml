@@ -15,12 +15,6 @@
         #logo
           %h1= link_to "Austin Schneider", "/"
           #tag_line Programmer
-      / #menu
-      /   %ul.menu
-      /     %li= link_to "Projects", "#projects"
-      /     %li= link_to "Get in touch", "#contact-me"
-      /     %li= link_to "On the web", "#on-the-web"
-      /   .clear
       #content
         = yield
       #root_footer
@@ -31,6 +25,4 @@
           = link_to "Austin Schneider", "/"
           using
           = link_to("Ruby on Rails", "http://rubyonrails.org") + "."
-        .view_source
-          =# link_to("View the source code", "http://github.com/soccer022483/austinschneider") + "."
         .clear
