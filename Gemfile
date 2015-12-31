@@ -6,6 +6,7 @@ gem 'rails', '~> 3.2.22'
 gem 'haml-rails', '~> 0.3.4'
 # gem "octokit", "~> 1.8.1"
 gem "captivus", '>= 0.0.6'
+gem 'rails_12factor'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.5'
