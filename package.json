@@ -1,0 +1,22 @@
+{
+  "name": "austinschneider",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node build",
+    "deploy": "node build && aws s3 sync dist/ s3://www.austinschneider.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austinthecoder/austinschneider.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/austinthecoder/austinschneider/issues"
+  },
+  "homepage": "https://github.com/austinthecoder/austinschneider#readme",
+  "devDependencies": {
+    "esbuild": "^0.14.42"
+  }
+}

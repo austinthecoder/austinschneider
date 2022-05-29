@@ -1,7 +1,2 @@
-/.bundle
-/.rvmrc
-/.powrc
-config/database.yml
-log/*.log
-tmp/
-.sass-cache/
+/dist/app.js
+/dist/app.css
